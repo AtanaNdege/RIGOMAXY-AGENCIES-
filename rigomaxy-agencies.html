@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rigomaxy Agencies — Premium Car Services, Kisumu</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0d0d0d;--off-white:#f8f5f0;--cream:#ede9e1;
+  --gold:#b8943f;--gold-light:#d4ab58;--gold-dark:#8a6b28;
+  --charcoal:#2c2b28;--mid:#5a5851;--light:#9a9690;
+  --border:rgba(184,148,63,0.25);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--charcoal);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(13,13,13,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(184,148,63,0.15);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold);letter-spacing:0.04em;text-decoration:none}
+.nav-logo span{color:#fff}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:2px;font-weight:600!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--black);display:flex;align-items:center;position:relative;overflow:hidden;padding:7rem 2rem 4rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(184,148,63,.09) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 30%,rgba(184,148,63,.05) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.1;color:#fff;font-weight:700;margin-bottom:1.5rem}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{color:rgba(255,255,255,.55);font-size:1rem;line-height:1.8;max-width:460px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);padding:.9rem 2rem;border-radius:2px;font-weight:600;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(255,255,255,.25);color:#fff;padding:.9rem 2rem;border-radius:2px;font-weight:500;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:border-color .2s,color .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+/* hero card */
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,148,63,.2);border-radius:4px;padding:2.5rem}
+.hero-card h3{font-family:'Playfair Display',serif;color:#fff;font-size:1.1rem;margin-bottom:1.5rem}
+.service-list{list-style:none}
+.service-list li{display:flex;align-items:center;gap:.75rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.75);font-size:.92rem}
+.service-list li:last-child{border-bottom:none}
+.service-list li::before{content:'';display:block;width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.contact-strip{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(184,148,63,.2);display:flex;align-items:center;gap:.75rem;color:var(--gold);font-size:.85rem;font-weight:500}
+
+/* SOCIAL QUICK BAR */
+.social-bar{background:#111;border-bottom:1px solid rgba(184,148,63,.12);padding:.6rem 2rem;display:flex;align-items:center;justify-content:flex-end;gap:1rem}
+.sbar-link{display:inline-flex;align-items:center;gap:.45rem;color:rgba(255,255,255,.5);font-size:.78rem;text-decoration:none;transition:color .2s;letter-spacing:.04em}
+.sbar-link:hover{color:#fff}
+.sbar-link svg{flex-shrink:0}
+
+/* SECTIONS */
+section{padding:6rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;line-height:1.2}
+
+/* STATS */
+.stats{background:var(--gold);padding:3.5rem 2rem}
+.stats-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--black);line-height:1}
+.stat-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(13,13,13,.65);margin-top:.4rem;font-weight:500}
+
+/* ABOUT */
+.about{background:var(--black)}
+.about h2{color:#fff;margin-bottom:1.25rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.mv-cards{display:flex;flex-direction:column;gap:1.25rem}
+.mv-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,148,63,.15);border-left:3px solid var(--gold);padding:1.5rem 1.75rem;border-radius:2px}
+.mv-card h4{font-family:'Playfair Display',serif;color:var(--gold);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+.mv-card p{color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.75}
+
+/* SERVICES */
+.services{background:var(--off-white)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+.svc-card{background:#fff;border:1px solid var(--cream);border-radius:2px;padding:2rem;transition:border-color .25s,transform .2s;cursor:default}
+.svc-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.svc-icon{width:52px;height:52px;background:rgba(184,148,63,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.svc-icon svg{width:28px;height:28px}
+.svc-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.6rem;color:var(--black)}
+.svc-card p{font-size:.88rem;color:var(--mid);line-height:1.7}
+
+/* PRICING */
+.pricing{background:var(--cream)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem}
+.price-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:4px;padding:2rem;text-align:center;transition:transform .2s,border-color .2s}
+.price-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.price-card.featured{border:2px solid var(--gold);position:relative}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;white-space:nowrap}
+.price-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.5rem;color:var(--black)}
+.price-card .price{font-size:1.9rem;font-weight:700;color:var(--gold);font-family:'Playfair Display',serif;margin:.75rem 0 .25rem}
+.price-card .price-period{font-size:.78rem;color:var(--mid);text-transform:uppercase;letter-spacing:.06em}
+.price-card ul{list-style:none;margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem}
+.price-card ul li{font-size:.85rem;color:var(--mid);display:flex;align-items:center;gap:.5rem;justify-content:center}
+.price-card ul li::before{content:'✓';color:var(--gold);font-weight:700;font-size:.9rem}
+.price-card .price-cta{display:block;margin-top:1.5rem;background:var(--gold);color:var(--black);padding:.7rem 1.5rem;border-radius:2px;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.price-card .price-cta:hover{background:var(--gold-light)}
+
+/* WHY */
+.why{background:var(--off-white)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2.5rem}
+.why-item{display:flex;flex-direction:column;gap:.75rem}
+.why-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold);font-weight:700;line-height:1;opacity:.5}
+.why-item h4{font-size:1rem;font-weight:600;color:var(--black)}
+.why-item p{font-size:.88rem;color:var(--mid);line-height:1.7}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--black);padding:6rem 2rem}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
+.testi-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,148,63,.15);border-radius:4px;padding:2rem}
+.testi-stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
+.testi-card blockquote{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.8;font-style:italic;margin-bottom:1.25rem}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--gold-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:.9rem;color:var(--off-white);font-weight:700;flex-shrink:0}
+.testi-name{font-size:.88rem;font-weight:600;color:#fff}
+.testi-role{font-size:.78rem;color:rgba(255,255,255,.4)}
+
+/* CONTACT */
+.contact{background:#111}
+.contact h2{color:#fff;margin-bottom:.75rem}
+.contact>.container>p{color:rgba(255,255,255,.5);margin-bottom:3rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.contact-item:last-of-type{border-bottom:none}
+.c-icon{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:22px;height:22px}
+.contact-item h5{color:var(--gold);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:.3rem}
+.contact-item p,.contact-item a{color:rgba(255,255,255,.7);font-size:.9rem;text-decoration:none;line-height:1.6}
+.contact-item a:hover{color:var(--gold)}
+
+/* Social connect buttons */
+.socials{display:flex;flex-direction:column;gap:.75rem;margin-top:.25rem}
+.social-connect{display:inline-flex;align-items:center;gap:.75rem;padding:.75rem 1.1rem;border-radius:6px;text-decoration:none;font-size:.88rem;font-weight:500;transition:opacity .2s,transform .15s;width:100%}
+.social-connect:hover{opacity:.9;transform:translateX(3px)}
+.social-connect span{flex:1}
+.social-connect .arr{color:rgba(255,255,255,.5);font-size:.8rem}
+.sc-whatsapp{background:#25D366;color:#fff}
+.sc-facebook{background:#1877F2;color:#fff}
+.sc-gmail{background:#fff;color:#333;border:1px solid rgba(0,0,0,.1)}
+.sc-phone{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
+
+/* form */
+.cform{display:flex;flex-direction:column;gap:1rem}
+.cform input,.cform textarea,.cform select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:.85rem 1rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;width:100%;resize:none;transition:border-color .2s}
+.cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.3)}
+.cform input:focus,.cform textarea:focus,.cform select:focus{border-color:var(--gold)}
+.cform textarea{height:120px}
+.cform select option{background:#222;color:#fff}
+.cform button{background:var(--gold);color:var(--black);padding:.9rem;border:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.cform button:hover{background:var(--gold-light)}
+
+/* FOOTER */
+footer{background:#080808;padding:3rem 2rem 2rem;border-top:1px solid rgba(184,148,63,.12)}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-brand-name{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);letter-spacing:.04em;margin-bottom:.75rem}
+.footer-desc{color:rgba(255,255,255,.35);font-size:.83rem;line-height:1.75;max-width:260px}
+.footer-col h6{color:rgba(255,255,255,.5);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer-col ul li a{color:rgba(255,255,255,.4);font-size:.83rem;text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-social{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.fsoc{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;transition:opacity .2s,transform .15s}
+.fsoc:hover{opacity:.85;transform:translateY(-2px)}
+.fsoc-wa{background:#25D366}
+.fsoc-fb{background:#1877F2}
+.fsoc-gm{background:#fff}
+.fsoc-ph{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{color:rgba(255,255,255,.25);font-size:.78rem}
+
+/* FLOAT WA BUTTON */
+.float-wa{position:fixed;bottom:1.75rem;right:1.75rem;z-index:998;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.float-wa:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.5)}
+.float-wa svg{width:28px;height:28px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(13,13,13,.98);padding:1rem 2rem;gap:1rem}
+  .nav-links.open{display:flex}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  section{padding:4rem 1.25rem}
+  .stats{padding:3rem 1.25rem}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254740849438" target="_blank" class="float-wa" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">RIGO<span>MAXY</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- SOCIAL QUICK BAR -->
+<div class="social-bar">
+  <a href="https://wa.me/254740849438" target="_blank" class="sbar-link">
+    <!-- WhatsApp SVG -->
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp Us
+  </a>
+  <a href="https://www.facebook.com/share/1F9Kf7s3Pv/" target="_blank" class="sbar-link">
+    <!-- Facebook SVG -->
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Facebook
+  </a>
+  <a href="mailto:geophreymiroga@gmail.com" class="sbar-link">
+    <!-- Gmail SVG -->
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
+      <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64V9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#C5221F"/>
+    </svg>
+    Email Us
+  </a>
+  <a href="tel:+254740849438" class="sbar-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    +254 740 849 438
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Kisumu, Kenya</p>
+      <h1>Drive in <em>Comfort.</em><br>Arrive in Style.</h1>
+      <p class="hero-sub">Rigomaxy Agencies delivers premium car services — flexible rentals, reliable transfers, professional hire, and expert repairs. Your journey, our commitment.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/254740849438" target="_blank" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What We Offer</h3>
+      <ul class="service-list">
+        <li>Car Rental — Short &amp; Long Term</li>
+        <li>Car Drop-Off — Convenient Transfers</li>
+        <li>Car Hire — Chauffeur Available</li>
+        <li>Car Repair &amp; Maintenance</li>
+        <li>Fleet Management Consultancy</li>
+      </ul>
+      <div class="contact-strip">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +254 740 849 438 · Available 24/7
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">500+</div><div class="stat-label">Happy Clients</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Core Services</div></div>
+    <div><div class="stat-num">24/7</div><div class="stat-label">Availability</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Satisfaction Goal</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Who We Are</p>
+        <h2 style="color:#fff">Built on Trust,<br>Driven by Excellence</h2>
+        <p style="color:rgba(255,255,255,.6);line-height:1.9;margin-top:1.25rem">Rigomaxy Agencies is a Kisumu-based automotive services company dedicated to delivering dependable, high-quality car solutions for individuals, families, and businesses. We combine professionalism with a personal touch — because every journey matters.</p>
+        <p style="color:rgba(255,255,255,.6);line-height:1.9;margin-top:1rem">From a quick city drop-off to a long-term vehicle hire, our team is equipped to handle all your mobility needs with speed, safety, and a smile.</p>
+        <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-flex">Contact Us Today</a>
+      </div>
+      <div class="mv-cards">
+        <div class="mv-card">
+          <h4>Our Mission</h4>
+          <p>To provide accessible, reliable, and premium automotive services that empower people and businesses in Kisumu and beyond to move with confidence and ease.</p>
+        </div>
+        <div class="mv-card">
+          <h4>Our Vision</h4>
+          <p>To become Kenya's most trusted name in personal and corporate mobility — setting the standard for car service excellence from the lakeside city.</p>
+        </div>
+        <div class="mv-card">
+          <h4>Our Values</h4>
+          <p>Integrity, professionalism, and genuine care for every client. We treat every vehicle — and every customer — as if they were our own.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="section-label">What We Do</p>
+    <h2>Our Core Services</h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">
+          <!-- Car / Rental icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b8943f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h1l2-4h12l2 4h1a2 2 0 012 2v6a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/><path d="M10 17h4"/></svg>
+        </div>
+        <h3>Car Rental</h3>
+        <p>Flexible daily, weekly, and monthly rentals. Pick from our well-maintained fleet and hit the road on your own terms.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <!-- Drop-off / location pin -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b8943f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Car Drop-Off</h3>
+        <p>Need a ride to the airport, a meeting, or across town? Our drivers get you there safely and on time — every time.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <!-- Hire / key icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b8943f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3"/><path d="M13 4l1.5 1.5"/></svg>
+        </div>
+        <h3>Car Hire</h3>
+        <p>Professional chauffeur-driven hire for events, business travel, or special occasions. Arrive with the impression you deserve.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <!-- Repair / wrench icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b8943f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Car Repair &amp; Service</h3>
+        <p>From routine maintenance to general repairs, our skilled technicians keep your vehicle in peak condition — reliably and affordably.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="section-label">Rates & Plans</p>
+    <h2>Simple, Honest Pricing</h2>
+    <p style="color:var(--mid);margin-top:.75rem;font-size:.95rem">All rates in KES. Contact us for custom corporate packages.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Daily Rental</h3>
+        <div class="price">KES 3,500</div>
+        <div class="price-period">per day</div>
+        <ul>
+          <li>Self-drive option</li>
+          <li>Unlimited city km</li>
+          <li>Fuel not included</li>
+          <li>Insurance covered</li>
+        </ul>
+        <a href="https://wa.me/254740849438" target="_blank" class="price-cta">Book Now</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Most Popular</div>
+        <h3>Weekly Hire</h3>
+        <div class="price">KES 18,000</div>
+        <div class="price-period">per week</div>
+        <ul>
+          <li>Chauffeur available</li>
+          <li>Free airport pickup</li>
+          <li>Flexible drop-off</li>
+          <li>24/7 support</li>
+        </ul>
+        <a href="https://wa.me/254740849438" target="_blank" class="price-cta">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Drop-Off Trip</h3>
+        <div class="price">KES 800</div>
+        <div class="price-period">within Kisumu</div>
+        <ul>
+          <li>City transfers</li>
+          <li>Airport runs</li>
+          <li>Intercity quotes</li>
+          <li>Prompt pickup</li>
+        </ul>
+        <a href="https://wa.me/254740849438" target="_blank" class="price-cta">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Car Service</h3>
+        <div class="price">KES 1,200</div>
+        <div class="price-period">basic service</div>
+        <ul>
+          <li>Oil &amp; filter change</li>
+          <li>Tyre inspection</li>
+          <li>General diagnostics</li>
+          <li>Free quote first</li>
+        </ul>
+        <a href="https://wa.me/254740849438" target="_blank" class="price-cta">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <p class="section-label">Why Choose Us</p>
+    <h2>The Rigomaxy Difference</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <h4>Transparent Pricing</h4>
+        <p>No hidden costs or surprise fees. What we quote is what you pay — honest rates for every service.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <h4>Local Expertise</h4>
+        <p>Kisumu-based and community-rooted. We know the roads, the routes, and the needs of our clients.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <h4>Well-Maintained Fleet</h4>
+        <p>Every vehicle is regularly inspected and serviced to ensure your safety and comfort at all times.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <h4>24/7 Availability</h4>
+        <p>Car emergencies don't keep office hours. Neither do we. Reach us anytime, day or night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <p class="section-label">Client Reviews</p>
+    <h2 style="color:#fff">What Our Clients Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Rigomaxy made our wedding day transport completely stress-free. The car was immaculate, the driver was punctual, and the service was outstanding. Highly recommend!"</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">AO</div>
+          <div>
+            <div class="testi-name">Akinyi Otieno</div>
+            <div class="testi-role">Kisumu — Wedding Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"I rent from Rigomaxy every month for my business trips around Nyanza. Consistent, reliable, and the pricing is always fair. Best car hire in Kisumu, hands down."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">JM</div>
+          <div>
+            <div class="testi-name">James Mwangi</div>
+            <div class="testi-role">Nairobi — Corporate Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"They repaired my car quickly and at a very fair price. Transparent about costs from the start. I won't take my vehicle anywhere else in Kisumu now."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">FW</div>
+          <div>
+            <div class="testi-name">Faith Wanjiru</div>
+            <div class="testi-role">Kisumu — Repair Client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2>Let's Get You Moving</h2>
+    <p>Reach out via any channel — we respond fast.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+
+        <!-- Phone -->
+        <div class="contact-item">
+          <div class="c-icon" style="background:rgba(255,255,255,.07)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h5>Phone</h5>
+            <a href="tel:+254740849438">+254 740 849 438</a><br>
+            <a href="tel:+254785677084">+254 785 677 084</a>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="contact-item">
+          <div class="c-icon" style="background:rgba(66,133,244,.15)">
+            <!-- Google Maps pin -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
+              <circle cx="12" cy="9" r="2.5" fill="#fff"/>
+            </svg>
+          </div>
+          <div>
+            <h5>Location</h5>
+            <p>Kisumu, Kenya</p>
+            <a href="https://maps.google.com/?q=Kisumu,Kenya" target="_blank" style="color:var(--gold);font-size:.8rem">View on Google Maps →</a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-item">
+          <div class="c-icon" style="background:#fff">
+            <!-- Gmail official logo -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73l-6.545 4.91V9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#C5221F"/>
+              <path d="M5.455 4.64L0 8.397V5.457C0 3.434 2.31 2.28 3.927 3.493L5.455 4.64z" fill="#C5221F"/>
+            </svg>
+          </div>
+          <div>
+            <h5>Email</h5>
+            <a href="mailto:geophreymiroga@gmail.com">geophreymiroga@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Social connect -->
+        <div>
+          <h5 style="color:var(--gold);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:.85rem">Connect With Us</h5>
+          <div class="socials">
+            <a href="https://wa.me/254740849438" target="_blank" class="social-connect sc-whatsapp">
+              <!-- WhatsApp logo -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <span>Chat on WhatsApp</span>
+              <span class="arr">→</span>
+            </a>
+            <a href="https://www.facebook.com/share/1F9Kf7s3Pv/" target="_blank" class="social-connect sc-facebook">
+              <!-- Facebook logo -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Follow on Facebook</span>
+              <span class="arr">→</span>
+            </a>
+            <a href="mailto:geophreymiroga@gmail.com" class="social-connect sc-gmail">
+              <!-- Gmail logo -->
+              <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73l-6.545 4.91V9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#C5221F"/>
+              </svg>
+              <span style="color:#333">Send an Email</span>
+              <span class="arr" style="color:#999">→</span>
+            </a>
+            <a href="tel:+254740849438" class="social-connect sc-phone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>Call Us Now</span>
+              <span class="arr">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- FORM -->
+      <div>
+        <form class="cform" onsubmit="handleForm(event)">
+          <input type="text" placeholder="Your Full Name" required>
+          <input type="tel" placeholder="Phone Number (e.g. +254 7XX XXX XXX)">
+          <input type="email" placeholder="Email Address (optional)">
+          <select>
+            <option value="" disabled selected>Service Needed</option>
+            <option>Car Rental — Daily</option>
+            <option>Car Rental — Weekly/Monthly</option>
+            <option>Car Drop-Off / Transfer</option>
+            <option>Car Hire with Chauffeur</option>
+            <option>Car Repair &amp; Service</option>
+            <option>Corporate / Fleet Enquiry</option>
+            <option>Other Enquiry</option>
+          </select>
+          <textarea placeholder="Tell us more — pickup location, dates, special requests..."></textarea>
+          <button type="submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Enquiry
+          </button>
+        </form>
+        <p id="form-msg" style="margin-top:.75rem;color:#25D366;font-size:.85rem;display:none">✓ Opening WhatsApp with your message — just hit Send!</p>
+        <p style="color:rgba(255,255,255,.25);font-size:.75rem;margin-top:.75rem">Or WhatsApp us directly for an instant response:</p>
+        <a href="https://wa.me/254740849438?text=Hello%20Rigomaxy%20Agencies%2C%20I%27d%20like%20to%20book%20a%20service." target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:.5rem;background:#25D366;color:#fff;padding:.6rem 1.1rem;border-radius:4px;font-size:.83rem;font-weight:600;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">RIGOMAXY AGENCIES</div>
+        <p class="footer-desc">Your trusted partner for premium car services in Kisumu, Kenya. Rentals, transfers, hire, and repairs — all under one roof.</p>
+        <div class="footer-social" style="margin-top:1.25rem">
+          <a href="https://wa.me/254740849438" target="_blank" class="fsoc fsoc-wa" title="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1F9Kf7s3Pv/" target="_blank" class="fsoc fsoc-fb" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="mailto:geophreymiroga@gmail.com" class="fsoc fsoc-gm" title="Gmail">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/></svg>
+          </a>
+          <a href="tel:+254740849438" class="fsoc fsoc-ph" title="Call us">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Services</h6>
+        <ul>
+          <li><a href="#services">Car Rental</a></li>
+          <li><a href="#services">Car Drop-Off</a></li>
+          <li><a href="#services">Car Hire</a></li>
+          <li><a href="#services">Car Repair</a></li>
+          <li><a href="#pricing">View Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">Our Mission</a></li>
+          <li><a href="#testimonials">Client Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:+254740849438">+254 740 849 438</a></li>
+          <li><a href="tel:+254785677084">+254 785 677 084</a></li>
+          <li><a href="mailto:geophreymiroga@gmail.com">geophreymiroga@gmail.com</a></li>
+          <li><a href="https://maps.google.com/?q=Kisumu,Kenya" target="_blank">Kisumu, Kenya</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Rigomaxy Agencies · Kisumu, Kenya · All rights reserved</p>
+      <p>Car Rentals · Drop-Off · Hire · Repair · Fleet Services</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleForm(e){
+  e.preventDefault();
+  const f = e.target;
+  const name    = f.querySelector('input[type="text"]').value.trim();
+  const phone   = f.querySelector('input[type="tel"]').value.trim();
+  const email   = f.querySelector('input[type="email"]').value.trim();
+  const service = f.querySelector('select').value;
+  const details = f.querySelector('textarea').value.trim();
+
+  let msg = '*New Enquiry \u2014 Rigomaxy Agencies*\n';
+  msg += '\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\n';
+  msg += `\ud83d\udc64 *Name:* ${name}\n`;
+  if(phone)   msg += `\ud83d\udcde *Phone:* ${phone}\n`;
+  if(email)   msg += `\ud83d\udce7 *Email:* ${email}\n`;
+  if(service) msg += `\ud83d\ude97 *Service:* ${service}\n`;
+  if(details) msg += `\ud83d\udcac *Message:*\n${details}\n`;
+  msg += '\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\n';
+  msg += '_Sent via rigomaxy-agencies website_';
+
+  const waUrl = 'https://wa.me/254740849438?text=' + encodeURIComponent(msg);
+  window.open(waUrl, '_blank');
+
+  const notice = document.getElementById('form-msg');
+  notice.style.display = 'block';
+  f.reset();
+  setTimeout(()=> notice.style.display='none', 6000);
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
